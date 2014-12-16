@@ -1,6 +1,6 @@
-# Nilsteps
+# NilSteps
 
-TODO: Write a gem description
+NilSteps is an OSC client sequecer for 16 steps / bar, only single track is available for the moment. You need OSC server compatible instruments to hear generated sound.
 
 ## Installation
 
@@ -20,7 +20,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# C1 for 1st note and D1 for 8th note of 16 steps in a bar
+seq = NilSteps::Sequencer.new
+seq.setup_steps(0 => 'C1', 8 => 'D1')
+seq.play(4)
+```
 
 ## Contributing
 
