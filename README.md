@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ```ruby
 # C1 for 1st note and D1 for 8th note of 16 steps in a bar
-seq = NilSteps::Sequencer.new
+seq = Nilsteps::Sequencer.new
 seq.setup_steps(0 => 'C1', 8 => 'D1')
 seq.play(4)
 ```

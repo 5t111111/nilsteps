@@ -24,7 +24,6 @@ module Nilsteps
   # 16 steps / bar OSC sequencer for a track
   #
   class Sequencer
-
     def initialize(bpm: 120, length: 16, osc_server: "localhost", osc_port: 2345)
       @steps = Array.new(length)
       @resolution = 16 # Cannot change resolution for the moment
@@ -45,24 +44,24 @@ module Nilsteps
       end
     end
 
-    # def note_length
-    #   case @resolution
-    #   when 1
-    #     @bpm_to_ms.whole_note
-    #   when 2
-    #     @bpm_to_ms.half_note
-    #   when 4
-    #     @bpm_to_ms.quater_note
-    #   when 8
-    #     @bpm_to_ms.eighth_note
-    #   when 16
-    #     @bpm_to_ms.sixteenth_note
-    #   when 32
-    #     @bpm_to_ms.thirtysecond_note
-    #   else
-    #     @bpm_to_ms.sixteenth_note
-    #   end
-    # end
+    def note_length
+      case @resolution
+      when 1
+        @bpm_to_ms.whole_note
+      when 2
+        @bpm_to_ms.half_note
+      when 4
+        @bpm_to_ms.quater_note
+      when 8
+        @bpm_to_ms.eighth_note
+      when 16
+        @bpm_to_ms.sixteenth_note
+      when 32
+        @bpm_to_ms.thirtysecond_note
+      else
+        @bpm_to_ms.sixteenth_note
+      end
+    end
 
     #
     # Play sequence
