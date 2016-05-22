@@ -8,25 +8,25 @@ module Nilsteps
       end
     end
 
-    def kick(pattern, length, note: 'C1')
+    def kick(pattern, length: 1, note: 'C1')
       raise ResolutionError unless valid_resolution?(pattern)
       steps = step_notes_for_pattern(pattern, note)
       Sequencer.play_on_the_fly(steps, length)
     end
 
-    def snare(pattern, length, note: 'D1')
+    def snare(pattern, length: 1, note: 'D1')
       raise ResolutionError unless valid_resolution?(pattern)
       steps = step_notes_for_pattern(pattern, note)
       Sequencer.play_on_the_fly(steps, length)
     end
 
-    def close_hihat(pattern, length, note: 'F#1')
+    def close_hihat(pattern, length: 1, note: 'F#1')
       raise ResolutionError unless valid_resolution?(pattern)
       steps = step_notes_for_pattern(pattern, note)
       Sequencer.play_on_the_fly(steps, length)
     end
 
-    def open_hihat(pattern, length, note: 'A#1')
+    def open_hihat(pattern, length: 1, note: 'A#1')
       raise ResolutionError unless valid_resolution?(pattern)
       steps = step_notes_for_pattern(pattern, note)
       Sequencer.play_on_the_fly(steps, length)

@@ -14,7 +14,7 @@ describe 'Nilsteps::DSL' do
   end
 
   it 'raise error when passing unexpected resolution' do
-    proc { kick 'oxox', 1 }.must_raise Nilsteps::ResolutionError
+    proc { kick 'oxox', length: 1 }.must_raise Nilsteps::ResolutionError
   end
 end
 
