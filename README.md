@@ -1,6 +1,6 @@
-# NilSteps
+# Nilsteps
 
-NilSteps is an OSC client sequecer for 16 steps / bar, only single track is available for the moment. You need OSC server compatible instruments to hear generated sound.
+Nilsteps is an OSC client sequecer for 16 steps / bar, only single track is available for the moment. You need OSC server compatible instruments to hear generated sound.
 
 ## Installation
 
@@ -25,12 +25,7 @@ Or install it yourself as:
 seq = Nilsteps::Sequencer.new
 seq.setup_steps(0 => 'C1', 8 => 'D1')
 seq.play(4)
+
+# Drum machine like sequence DSL
+kick 'oxxxoxxxoxxxoxox', 1
 ```
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/nilsteps/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
