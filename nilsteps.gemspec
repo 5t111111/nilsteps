@@ -6,7 +6,7 @@ require 'nilsteps/version'
 Gem::Specification.new do |spec|
   spec.name          = "nilsteps"
   spec.version       = Nilsteps::VERSION
-  spec.authors       = ["WAKASUGI 5T111111"]
+  spec.authors       = ["Hirofumi Wakasugi"]
   spec.email         = ["baenej@gmail.com"]
   spec.summary       = %q{Simple OSC step sequencer}
   spec.description   = %q{NilSteps is an OSC client sequecer for 16 steps / bar, only single track is available for the moment. You need OSC server compatible instruments to hear generated sound.}
@@ -20,10 +20,10 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.0.0'
 
-  spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "minitest"
-  
   spec.add_runtime_dependency 'osc-ruby', '~> 1.1', '>= 1.1.1'
-  spec.add_dependency "bpm_to_msec", "~> 0.0.1"
+  spec.add_runtime_dependency "bpm_to_msec", "~> 0.0.1"
+
+  spec.add_development_dependency "bundler", "~> 1.12"
+  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "minitest", "~> 5.0"
 end
