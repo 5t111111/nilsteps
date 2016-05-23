@@ -14,7 +14,7 @@ module Nilsteps
       @osc_port = self.class.osc_port || osc_port
       @steps = Array.new(length)
       @resolution = 16 # Cannot change resolution for the moment
-      @osc_client = OSC::Client.new(osc_server, osc_port)
+      @osc_client = OSC::Client.new(osc_server, @osc_port)
       @bpm_to_ms = BPMToMsec.new(bpm)
     end
 
@@ -73,10 +73,10 @@ module Nilsteps
     class << self
       attr_reader :bpm, :osc_port
 
-      def play_on_the_fly(steps, length)
+      def play_on_the_fly(steps, length, times)
         seq = new
         seq.setup_steps(steps)
-        seq.play(length)
+        seq.play(times)
       end
 
       def mutex
@@ -89,6 +89,14 @@ module Nilsteps
 
       def global_osc_port(osc_port)
         mutex.synchronize { @osc_port = osc_port }
+      end
+
+      def reset_global_bpm
+        mutex.synchronize { @bpm = nil }
+      end
+
+      def reset_global_osc_port
+        mutex.synchronize { @osc_port = nil }
       end
     end
   end

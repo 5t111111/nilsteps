@@ -2,6 +2,8 @@
 
 Nilsteps is an OSC client sequecer for 16 steps / bar, only single track is available for the moment. You need OSC server compatible instruments to hear generated sound.
 
+__This is just a proof of concept as it does not care about the overhead. The specified BPM is not guaranteed at all.__
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -27,5 +29,7 @@ seq.setup_steps(0 => 'C1', 8 => 'D1')
 seq.play(4)
 
 # Drum machine like sequence DSL
-kick 'oxxxoxxxoxxxoxox', length: 1
+include Nilsteps::DSL
+
+kick 'oxxxoxxxoxxxoxox', times: 1
 ```
